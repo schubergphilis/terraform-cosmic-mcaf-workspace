@@ -8,13 +8,14 @@ Terraform module to create a TFC workspace for resources in a Cosmic account.
 | Name | Version |
 |------|---------|
 | terraform | >= 0.13 |
+| tfe | >= 0.25.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | github | n/a |
-| tfe | n/a |
+| tfe | >= 0.25.0 |
 
 ## Inputs
 
