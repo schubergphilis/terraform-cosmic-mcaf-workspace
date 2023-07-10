@@ -16,10 +16,12 @@ module "github_repository" {
 }
 
 resource "github_repository_file" "default" {
-  count      = var.create_backend_file ? 1 : 0
-  repository = var.github_repository
-  file       = "${var.working_directory}/backend.tf"
-  branch     = var.branch
+  count = var.create_backend_file ? 1 : 0
+
+  branch              = var.branch
+  file                = "${var.working_directory}/backend.tf"
+  overwrite_on_create = true
+  repository          = var.github_repository
 
   content = templatefile("${path.module}/backend.tf.tpl", {
     organization = var.terraform_organization
